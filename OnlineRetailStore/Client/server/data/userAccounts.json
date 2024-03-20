@@ -1,0 +1,72 @@
+{
+  "user123": {
+    "accounts": [
+      {
+        "id": "acc1",
+        "type": "Savings",
+        "balance": 491.01
+      },
+      {
+        "id": "acc2",
+        "type": "Checking",
+        "balance": 350.03
+      },
+      {
+        "id": "acc3",
+        "type": "Savings",
+        "balance": 0
+      },
+      {
+        "id": "acc4",
+        "type": "Savings",
+        "balance": 0
+      },
+      {
+        "id": "acc5",
+        "type": "Savings",
+        "balance": 0
+      }
+    ]
+  },
+  "user456": {
+    "accounts": [
+      {
+        "id": "acc3",
+        "type": "Savings",
+        "balance": 1500
+      }
+    ]
+  },
+  "hello": {
+    "accounts": [
+      {
+        "id": "acc1",
+        "type": "Savings",
+        "balance": 0
+      }
+    ]
+  },
+  "user": {
+    "accounts": [
+      {
+        "id": "acc1",
+        "type": "Savings",
+        "balance": 1000
+      },
+      {
+        "id": "acc2",
+        "type": "Checking",
+        "balance": 200
+      }
+    ]
+  },
+  "username123123": {
+    "accounts": [
+      {
+        "id": "acc1",
+        "type": "Savings",
+        "balance": 612
+      }
+    ]
+  }
+}
