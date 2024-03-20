@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin View</title>
+        <link rel="stylesheet" href="adminHome.css">
+
+    </head>
+    <body>
+        <h1>Admin Dashboard</h1>
+        <h3> </h3>
+        <a href="/admin/handle_requests" class="button-link">
+          <div class="red-square">
+              Refund Requests
+          </div>
+        </a>
+        <form>
+            <br><br>
+            <button onclick="toggleStadiumForm()">Add Stadium</button>
+            <button onclick="toggleEventForm()">Add Event</button>
+            <button onclick="toggleSectionForm()">Add Section</button>
+            <button onclick="toggleRowForm()">Add Row</button>
+            <button onclick="toggleSectionRowForm()">Add Section Row</button>
+            <button onclick="toggleSeatForm()">Add Seat</button>
+        </form>
+
+        <form id="stadiumForm" class="insertion">
+          <h2>Stadium Information</h2>
+          <input type="text" id="stadiumID" name="stadiumID" placeholder="Stadium ID" required><br>
+          <input type="text" id="address" name="address" placeholder="Address" required><br>
+          <input type="text" id="city" name="city" placeholder="City" required><br>
+          <input type="text" id="province" name="province" placeholder="Province" required><br>
+          <input type="text" id="country" name="country" placeholder="Country" required><br>
+          <input type="text" id="stadiumName" name="stadiumName" placeholder="Stadium Name" required><br>
+          <button onclick="addStadium()">Submit</button>
+      </form>
+
+      <form id="eventForm" class="insertion">
+        <h2>Event Information</h2>
+        <input type="text" id="eventID" name="eventID" placeholder="Event ID" required><br>
+        <input type="text" id="eventName" name="eventName" placeholder="Event Name" required><br>
+        <input type="text" id="eventDate" name="eventDate" placeholder="Event Date" required><br>
+        <input type="text" id="basePrice" name="basePrice" placeholder="Base Price" required><br>
+        <select id="stadiumSelect" name="stadiumID" required> 
+          <option value="" disabled selected>Select a stadium</option>
+        </select>
+        <label id="stadiumIdLabel">ID<br> </label>
+        <button onclick="addEvent()">Submit</button>
+    </form>
+
+    <form id="sectionForm" class="insertion">
+      <h2>Section Information</h2>
+      <input type="text" id="sectionID" name="sectionID" placeholder="Section ID" required><br>
+      <input type="text" id="sectionNumber" name="sectionNumber" placeholder="Section Number" required><br>
+      <input type="text" id="sectionMultiplier" name="sectionMultiplier" placeholder="Section Multiplier" required><br>
+      <select id="stadiumSelect2" name="stadiumID2" required> 
+        <option value="" disabled selected>Select a stadium</option>
+      </select>
+      <label id="stadiumIdLabel2">ID<br> </label>
+      <button onclick="addSection()">Submit</button>
+  </form>
+
+  <form id="rowForm" class="insertion">
+    <h2>Row Information</h2>
+    <input type="text" id="rowID" name="rowID" placeholder="Row ID" required><br>
+    <input type="text" id="rowNumber" name="rowNumber" placeholder="Row Number" required><br>
+    <input type="text" id="rowMultiplier" name="rowMultiplier" placeholder="Row Multiplier" required><br>
+    <select id="stadiumSelect4" name="stadiumID4" required> 
+      <option value="" disabled selected>Select a stadium</option>
+    </select>
+    <label id="stadiumIdLabel4">ID<br> </label>
+    <button onclick="addRow()">Submit</button>
+</form>
+
+<form id="sectionRowForm" class="insertion">
+  <h2>Section Row Information</h2>
+  <input type="text" id="sectionRowID5" name="sectionRowID5" placeholder="Section Row ID" required><br>
+  <select id="stadiumSelect5" name="stadiumID5" required>
+    <option value="" disabled selected>Select a stadium</option>
+  </select>
+  <label id="stadiumIdLabel5" >ID<br> </label>
+  <select id="sectionSelect5" name="sectionID5" required >
+    <option value="" disabled selected>Select a section</option>
+  </select>
+  <label id="sectionIdLabel5" >ID<br> </label>
+  <select id="rowSelect5" name="rowID5" required>
+    <option value="" disabled selected>Select a row</option>
+  </select>
+  <label id="rowIdLabel5" >ID<br> </label>
+  <button onclick="addSectionRow()">Submit</button>
+</form>
+
+  <form id="seatForm" class="insertion">
+    <h2>Seat Information</h2>
+    <input type="text" id="seatID" name="seatID" placeholder="Seat ID" required><br>
+    <input type="text" id="seatNumber" name="seaNumber" placeholder="Seat Number" required><br>
+    <select id="stadiumSelect3" name="stadiumID" required>
+      <option value="" disabled selected>Select a stadium</option>
+    </select>
+    <label id="stadiumIdLabel3" >ID<br> </label>
+    <select id="sectionSelect" name="sectionID" required >
+      <option value="" disabled selected>Select a section</option>
+    </select>
+    <label id="sectionIdLabel" >ID<br> </label>
+    <select id="rowSelect" name="rowID" required>
+      <option value="" disabled selected>Select a row</option>
+    </select>
+    <label id="rowIdLabel" >ID<br> </label>
+    <select id="sectionRowSelect" name="sectionRowID" required>
+      <option value="" disabled selected>Select a section row</option>
+    </select>
+    <button onclick="addSeat()">Submit</button>
+</form>
+
+        <h1>Stadiums: </h1>
+   <table id="stadiumTable"></table>
+
+   <h1>Events: </h1>
+   <table id="eventTable"></table>
+
+   <h1>Sections: </h1>
+   <table id="sectionTable"></table>
+
+   <h1>Rows;</h1>
+   <table id="rowTable"></table>
+
+   <h1>Section Rows: </h1>
+   <button onclick="displaySectionRows()">Display Section Rows</button>
+   <table id="sectionrowTable"></table>
+
+   <h1>Seats: </h1>
+   <table id="seatTable"></table>
+
+   <script src="index.js"></script>
+    </body>
+</html>

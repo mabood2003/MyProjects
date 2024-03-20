@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Ticket Reciept</title>
+</head>
+<body>
+    <h1>Your purchase was successful!</h1>
+    <h2>Your ticket reciept:</h2>
+
+    <p>Event: <%= eventName %></p>
+    <p>Stadium: <%= stadiumName %></p>
+    <p>Date: <%= eventDate %></p><br>
+
+    <p>Seat <%= seatNumber %> </p>
+    <p>Row <%= rowNumber %> </p>
+    <p>Section <%= sectionNumber %> </p><br>
+    
+    <p><b>Paid $<%= finalPrice %></b></p>
+    <form action="/customerHome.html" method="GET">
+        <button type="submit">Back to home</button>
+    </form>
+</body>

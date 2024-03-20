@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer View</title>
+        <link rel="stylesheet" href="customerHome.css">
+
+    </head>
+    <body>
+        <h1>Ticket Booking Database Project</h1>
+        <h3>Purchase a new ticket: </h3>
+        <form action="/reviewOrder" method="POST">
+            <label for="eventID">Event ID</label>
+            <input type="text" name="eventID" placeholder="Enter Event ID" value="EVC01495">
+            <label for="seatID">Seat ID</label>
+            <input type="text" name="seatID" placeholder="Enter Seat ID" value="SEAT01032022">
+            <button type="submit">Purchase Ticket</button>
+        </form>
+        <h3><a href="/requests">View Refund Requests</a></h3>
+        
+        <h3>Search seats and events</h3>
+
+        <h1>Stadiums: </h1>
+   <table id="stadiumTableCust"></table>
+
+   <h1>Events: </h1>
+   <table id="eventTableCust"></table>
+
+   <h1>Sections: </h1>
+   <table id="sectionTableCust"></table>
+
+   <h1>Rows:</h1>
+   <table id="rowTableCust"></table>
+
+   <h1>Section Rows: </h1>
+   <button onclick="displaySectionRowsCust()">Display Section Rows</button>
+   <table id="sectionrowTableCust"></table>
+
+   <h1>Seats: </h1>
+   <table id="seatTableCust"></table>
+
+
+
+
+
+
+
+
+
+   <script src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Login</title>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    
+        <button type="button" onclick="login()">Login</button>
+      </form>
+    
+      <h1>Register</h1>
+    <form id="registerForm">
+      <label for="regEmail">Email:</label>
+      <input type="email" id="regEmail" name="regEmail" required>
+
+      <label for="regPassword">Password:</label>
+      <input type="password" id="regPassword" name="regPassword" required>
+
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="DOB">Date of Birth:</label>
+      <input type="date" id="DOB" name="DOB" required>
+
+      <button type="button" onclick="register()">Register</button>
+    </form>
+
+    <h1>Admin Login</h1>
+    <form id="adminLoginForm">
+    <label for="adminUsername">Username:</label>
+    <input type="text" id="adminUsername" name="adminUsername" required>
+
+    <label for="adminPassword">Password:</label>
+    <input type="password" id="adminPassword" name="adminPassword" required>
+
+    <button type="button" onclick="adminLogin()">Admin Login</button>
+    </form>
+  </div>
+  <script src="index.js"></script>
+
+</body>
+
+</html>
