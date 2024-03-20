@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Ticket Order</title>
+</head>
+<body>
+    <h2>Review your order:</h2>
+    <p><b>Buying ticket for <%= eventName %></b></p>
+    <p><b>Being held at <%= stadiumName %> on <%= eventDate %></b></p>
+    <p>Seat <%= seatNumber %>, Row <%= rowNumber %>, Section <%= sectionNumber %></p>
+    <p>Base Event Price: $<%= basePrice %></p>
+    <p>Row Multiplier: x<%= rowMultiplier %></p>
+    <p>Section Multiplier: x<%= sectionMultiplier %></p>
+    
+    <p><b>Final Price: $<%= finalPrice %></b></p>
+
+    <form action="/placeOrder" method="POST">
+        <input type="hidden" name="seatNumber" value="<%= seatNumber %>">
+        <input type="hidden" name="rowNumber" value="<%= rowNumber %>">
+        <input type="hidden" name="sectionNumber" value="<%= sectionNumber %>">
+        <input type="hidden" name="finalPrice" value="<%= finalPrice %>">
+        <input type="hidden" name="eventName" value="<%= eventName %>">
+        <input type="hidden" name="stadiumName" value="<%= stadiumName %>">
+        <input type="hidden" name="eventDate" value="<%= eventDate %>">
+        <input type="hidden" name="eventID" value="<%= eventID %>">
+        <input type="hidden" name="seatID" value="<%= seatID %>">
+        
+        <button type="submit">Purchase Ticket</button>
+    </form>
+</body>
+</html>

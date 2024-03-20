@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Approval</title>
+    <link rel="stylesheet" href="adminHome.css">
+</head>
+<body>
+    <form action='/admin/handle_requests/approval' method="post">
+        <h1>Handle Request</h1>
+        <h2>Request ID: <%= requestID %></h2>
+        <label>Approve or Reject?</label><br><br>
+        <button type="submit" name="action" value='["approve", "<%= requestID %>"]'>Approve</button>
+        <button type="submit" name="action" value='["reject", "<%= requestID %>"]'>Reject</button>
+        <br><br><a href='/admin/handle_requests'>Back</a>
+    </form>
+</body>
+</html>
