@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>User Authentication</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AccJqc_su6djGjlA4-ED7LeZz_vsyhJCEJktYz3yZ39MEM872BSKqMPAWqb-WtcJdgkrLcJFb0RVnghK"></script>
+</head>
+
+<body>
+    <nav>
+        <button onclick="logout()">Logout</button>
+        <button id="manage-account-button" onclick="showManageAccount()" >Manage Account</button>
+        <button id="transactionHistoryButton" onclick="showTransactionHistory()">Transaction History</button>
+        <span id="loadCartButton">
+            <img src="cart.png" alt="Load Cart">
+        </span>
+        <button id="bankLoginButton" onclick="redirectToBankAccount()">Log into Bank Account</button>
+
+    </nav>
+
+  <div id="transactionHistoryModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="closeTransactionHistoryModal()">&times;</span>
+      <h2>Transaction History</h2>
+      <ul id="transactionList"></ul>
+    </div>
+  </div>
+  <div id="manageAccountModal" class="modal" style="display: none;">
+    <div class="modal-content">
+    <span class="close" onclick="closeManageAccountModal()">&times;</span>
+    <h3>Update Password</h3>
+    <label for="newPassword">New Password:</label>
+    <input type="password" id="newPassword" required>
+    <label for="confirmNewPassword">Confirm New Password:</label>
+    <input type="password" id="confirmNewPassword" required>
+    <button onclick="updatePassword()">Update Password</button>
+
+    <h3>Update Username</h3>
+    <label for="newUsername">New Username:</label>
+    <input type="text" id="newUsername" required>
+    <label for="confirmNewUsername">Confirm New Username:</label>
+    <input type="text" id="confirmNewUsername" required>
+    <button onclick="updateUsername()">Update Username</button>
+    </div>
+  </div>
+
+  <table id="itemsTable">
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th>Item Price</th>
+      <th>Item Stock</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+  </table>
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <h1>My Cart:</h1>
+
+      <div id="shopping-cart" class="shopping-cart">
+        <table id="cartTable">
+    
+    
+        </table>
+    
+        <div id="totalAmountDiv" style="display:block;">Total: USD $<span id="totalAmountSpan">0.00</span></div>
+        <div id="paypal-button-container"></div>
+    
+        <button id="checkoutButton" style="display:block;">Checkout through Paypal</button>
+        <button id="checkoutButton2" style="display:block;">Checkout through system bank</button>
+
+
+        <div id="bankLoginModal" style="display: none;" >
+          <div class="modal-content">
+            <span class="close" onclick="closeBankLoginModal()">&times;</span>
+            <h2>Bank Login</h2>
+            <label for="bankUsername">Username:</label>
+            <input type="text" id="bankUsername" required>
+            <label for="bankPassword">Password:</label>
+            <input type="password" id="bankPassword" required>
+            <button onclick="loginToBank()">Log In</button>
+      
+          </div>
+        </div>
+        <div id="accountsList"></div>
+        <div id="transdiv" style="display: none;">
+          <label for="id">Account Number</label>
+          <input id = "id" required>
+        </div>
+
+        <button id="confirmPurchase" style="display:none;" onclick="confirm()">Confirm Purchase</button>
+
+
+    
+        <button id="cancelButton" style="display:block;" onclick="cancelCheckout()">Cancel</button>
+      </div>
+    </div>
+  
+  </div>
+
+  </div>
+
+   
+
+  
+  <script src="index.js"></script>
+</body>

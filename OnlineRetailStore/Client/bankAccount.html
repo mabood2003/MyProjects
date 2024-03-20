@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Account</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <nav>
+    <button onclick="goHome()">Home</button>
+    <button onclick="showAddAccountModal()" id="addnewAcc" hidden>Add new Account</button>
+  </nav>
+
+
+  <div id="bankLoginModal"  >
+    <div class="modal-content">
+      <span class="close" onclick="closeBankLoginModal()">&times;</span>
+      <h2>Bank Login</h2>
+      <label for="bankUsername">Username:</label>
+      <input type="text" id="bankUsername" required>
+      <label for="bankPassword">Password:</label>
+      <input type="password" id="bankPassword" required>
+      <button onclick="loginToBank()">Log In</button>
+      <button onclick="registerBank()">Register</button>
+
+    </div>
+  </div>
+
+  <h1 style="display: none;" id="header1">Welcome to Your Bank Account</h1>
+
+  <div id="addAccountModal" class="modal" style="display: none;" >
+    <div class="modal-content">
+      <span class="close" onclick="closeAddAccountModal()">&times;</span>
+      <h2>Add New Account</h2>
+      <form id="addAccountForm">
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" required>
+        
+        <label for="accountType">Account Type:</label>
+        <select id="accountType" required>
+          <option value="Savings">Savings</option>
+          <option value="Checking">Checking</option>
+        </select>
+        
+      </form>
+      <button type="button" id="accButton"onclick="addAccount()">Add Account</button>
+    </div>
+  </div>
+  <div id="accountsList"></div>
+
+  <div id="transactionModal"  style="display: none;" >
+    <div class="modal-content">
+      <span class="close" onclick="closeTransactionModal()">&times;</span>
+      <h2>Transaction Details</h2>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" required>
+      <label for="id">Account Number</label>
+      <input id = "id" required>
+      <button onclick="deposit()">Deposit</button>
+      <button onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+  <script src="bankAccount.js"></script>
+</body>
+
+</html>
